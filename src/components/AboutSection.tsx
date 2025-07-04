@@ -125,7 +125,7 @@ const AboutSection: React.FC = () => {
             {/* Интерактивная карта */}
             <div className="bg-gray-200 rounded-lg h-64 mb-4 overflow-hidden">
               <iframe
-                src="https://yandex.ru/map-widget/v1/?pt=59.815029,56.990150&z=13&l=map"
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3A66%3A58%3A2901002%3A1279&amp;source=constructor"
                 width="100%"
                 height="100%"
                 frameBorder="0"
