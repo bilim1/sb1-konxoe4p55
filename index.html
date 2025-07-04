@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <!-- Фавиконки в разных форматах для максимальной совместимости -->
+    <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/GmyS7XQk/favicon-V2.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="https://i.postimg.cc/GmyS7XQk/favicon-V2.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/GmyS7XQk/favicon-V2.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="https://i.postimg.cc/GmyS7XQk/favicon-V2.png" />
+    <link rel="icon" type="image/png" sizes="64x64" href="https://i.postimg.cc/GmyS7XQk/favicon-V2.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://i.postimg.cc/GmyS7XQk/favicon-V2.png" />
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="https://i.postimg.cc/GmyS7XQk/favicon-V2.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="https://i.postimg.cc/GmyS7XQk/favicon-V2.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="https://i.postimg.cc/GmyS7XQk/favicon-V2.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="https://i.postimg.cc/GmyS7XQk/favicon-V2.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="https://i.postimg.cc/GmyS7XQk/favicon-V2.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://i.postimg.cc/GmyS7XQk/favicon-V2.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="https://i.postimg.cc/GmyS7XQk/favicon-V2.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="https://i.postimg.cc/GmyS7XQk/favicon-V2.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="https://i.postimg.cc/GmyS7XQk/favicon-V2.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://i.postimg.cc/GmyS7XQk/favicon-V2.png" />
+    
+    <!-- Android Chrome -->
+    <link rel="icon" type="image/png" sizes="192x192" href="https://i.postimg.cc/GmyS7XQk/favicon-V2.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="https://i.postimg.cc/GmyS7XQk/favicon-V2.png" />
+    
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileImage" content="https://i.postimg.cc/GmyS7XQk/favicon-V2.png" />
+    <meta name="msapplication-TileColor" content="#065f46" />
+    <meta name="msapplication-config" content="none" />
+    
+    <!-- Yandex Browser specific -->
+    <meta name="yandex-tableau-widget" content="logo=https://i.postimg.cc/GmyS7XQk/favicon-V2.png" />
+    
+    <!-- Theme colors -->
+    <meta name="theme-color" content="#065f46" />
+    <meta name="msapplication-navbutton-color" content="#065f46" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://images.pexels.com" />
+    <link rel="preconnect" href="https://i.postimg.cc" />
+    
+    <!-- DNS prefetch for better performance -->
+    <link rel="dns-prefetch" href="https://images.pexels.com" />
+    <link rel="dns-prefetch" href="https://i.postimg.cc" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/src/main.tsx" as="script" />
+    
+    <!-- Critical CSS inlined for faster rendering -->
+    <style>
+      /* Critical above-the-fold styles */
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      
+      #root {
+        min-height: 100vh;
+      }
+      
+      /* Loading state */
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+      
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-top: 4px solid white;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+    
+    <title>Посёлок Билим - Экологичные дома для отдыха и инвестиций</title>
+    <meta name="description" content="Современные экологичные дома в 60 км от Екатеринбурга. Аренда и продажа недвижимости с высокой доходностью." />
+  </head>
+  <body>
+    <!-- Loading screen -->
+    <div id="loading-screen" class="loading-screen">
+      <div class="loading-spinner"></div>
+    </div>
+    
+    <div id="root"></div>
+    
+    <script>
+      // Remove loading screen when page is loaded
+      window.addEventListener('load', function() {
+        const loadingScreen = document.getElementById('loading-screen');
+        if (loadingScreen) {
+          loadingScreen.style.opacity = '0';
+          loadingScreen.style.transition = 'opacity 0.3s ease-out';
+          setTimeout(() => {
+            loadingScreen.remove();
+          }, 300);
+        }
+      });
+      
+      // Service Worker registration for caching
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+              console.log('SW registered: ', registration);
+            })
+            .catch(function(registrationError) {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+    
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
